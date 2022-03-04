@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('user.user-password');
     }
 
     /**
