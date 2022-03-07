@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IndonesiaCity;
+use App\Models\IndonesiaDistrict;
+use App\Models\IndonesiaProvince;
+use App\Models\IndonesiaVillage;
+use App\Models\User;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -54,9 +60,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        return view('user.user-edit');
+        $data = [
+            'user' => $user,
+        ];
+        return view('user.user-edit', $data);
     }
 
     /**
@@ -80,5 +89,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(User::class, 'slug', $request->name);
+        return response()->json([
+            'slug' => $slug
+        ]);
     }
 }

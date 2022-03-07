@@ -9,7 +9,7 @@
             role="button">
             Akun
         </a>
-        <a href="{{ route('user.edit', auth()->user()->id) }}"  class="list-group-item list-group-item-action 
+        <a href="{{ route('user.edit', auth()->user()->slug) }}"  class="list-group-item list-group-item-action 
             @if (Request::routeIs('user.edit'))
             bg-success bg-opacity-25
             @endif
@@ -17,7 +17,7 @@
             role="button">
             Ubah Profil
         </a>
-        <a href="{{ route('user.show', auth()->user()->id) }}" class="list-group-item list-group-item-action 
+        <a href="{{ route('user.show', 'password') }}" class="list-group-item list-group-item-action 
             @if (Request::routeIs('user.show'))
             bg-success bg-opacity-25
             @endif

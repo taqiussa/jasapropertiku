@@ -26,9 +26,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/guest.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('notyf/notyf.min.css') }}" rel="stylesheet" />
+    @stack('styles')
 </head>
 
 <body>
@@ -47,6 +47,6 @@
         <!-- Footer-->
         @include('partials.footer')
     </div>
+    @stack('scripts')
 </body>
-
 </html>

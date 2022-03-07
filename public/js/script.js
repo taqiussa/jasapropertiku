@@ -1,12 +1,24 @@
 var notyf = new Notyf({
-                        duration: 2000,
-                        position: {
-                            x:'right',
-                            y:'top',
-                        }
-                    });
+    duration: 5000,
+    position: {
+        x: 'right',
+        y: 'top',
+    },
+    dismissible: true,
+    types: [
+        {
+            type: 'warning',
+            background: 'orange',
+            icon: false,
+        },
+    ]
+});
 window.addEventListener('notyf:success', event => {
-    notyf[event.detail.type](event.detail.message);
+    // notyf[event.detail.type](event.detail.message);
+    notyf.open({
+        type: event.detail.type,
+        message: event.detail.message,
+    });
 });
 window.addEventListener('swal:notif', event => {
     swal.fire({
