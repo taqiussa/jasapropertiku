@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::resource('user', UserController::class);
-Route::get('/register/checkSlug', [UserController::class, 'checkSlug']);
+// Route::get('/register/checkSlug', [UserController::class, 'checkSlug']);
 Route::resource('posts', PostController::class)->names([
     'index' => 'posts'
 ]);

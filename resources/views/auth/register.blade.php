@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <script>
+        {{-- <script>
             const name = document.querySelector('#name');
             const slug = document.querySelector('#slug');
 
@@ -87,6 +87,6 @@
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
             });
-        </script>
+        </script> --}}
     </div>
 @endsection
