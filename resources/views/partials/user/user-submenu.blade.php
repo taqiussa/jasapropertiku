@@ -25,6 +25,14 @@
             role="button">
             Ubah Password
         </a>
+        <a href="{{ route('posts.create') }}" class="list-group-item list-group-item-action 
+            @if (Request::routeIs('posts.create'))
+            bg-success bg-opacity-25
+            @endif
+            " 
+            role="button">
+            Buat Iklan
+        </a>
         <a onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" 
             class="list-group-item list-group-item-action" 

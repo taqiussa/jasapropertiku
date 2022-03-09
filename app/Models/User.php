@@ -58,6 +58,7 @@ class User extends Authenticatable
         'indonesiaCity',
         'indonesiaDistrict',
         'indonesiaVillage',
+        'posts'
     ];
     public function getRouteKeyName()
     {
@@ -70,6 +71,9 @@ class User extends Authenticatable
                 'source' => 'name'
                 ]      
             ];
+    }
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
     public function indonesiaProvince(){
         return $this->hasOne(IndonesiaProvince::class,'code','province');

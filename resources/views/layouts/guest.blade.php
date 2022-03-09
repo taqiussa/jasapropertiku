@@ -36,7 +36,7 @@
         <!-- Responsive navbar-->
         @include('partials.navbar')
         <!-- Page header with logo and tagline-->
-        @if (Request::routeIs('login') || Request::routeIs('register') || Request::routeIs('user.*'))
+        @if (Request::routeIs('login') || Request::routeIs('register') || Request::routeIs('user.*') || Request::routeIs('posts.create'))
         @else
         @include('partials.header')
         @endif
